@@ -13,10 +13,13 @@ app.get("/player/:userId", async (req, res) => {
 			rap: data.rap || 0
 		});
 	} catch (err) {
-		res.json({ value: 0, rap: 0 });
+		res.json({
+			value: 0,
+			rap: 0
+		});
 	}
 });
 
-app.listen(3000, () => {
-	console.log("Server running on port 3000");
+app.listen(process.env.PORT || 3000, () => {
+	console.log("Server running");
 });
